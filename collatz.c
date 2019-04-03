@@ -1,18 +1,15 @@
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int n, count;
     count = 1;
     scanf("%d", &n);
 
-
-    while (n > 1) {
+    for (count = 1; n > 1; count++) {
         if (n % 2 == 0) {
             n /= 2;
-            count++;
-        } else if (n % 2 != 0) {
+		´} else if (n % 2 != 0) {
             n = 3 * n + 1;
-            count++;
         }
     }
     printf("%d", count);
