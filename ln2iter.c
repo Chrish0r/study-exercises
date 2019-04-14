@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-double ln2iter(double anzahl_teilsummen) {
+double ln2iter(int anzahl_teilsummen) {
     int i;
     double summe = 0;
     double potenz = -1, faktor = -1;
@@ -11,13 +11,13 @@ double ln2iter(double anzahl_teilsummen) {
     return summe;
 }
  int main() {
-     double n;
+     int n;
      double ergebnis;
 
      printf("Wieviele Teilsummen wollen Sie berechnen: \n");
-     scanf("%lf", &n);
+     scanf("%d", &n);
      ergebnis = ln2iter(n);
-     printf("Der natuerliche Logarithmus von 2 mit %lf Teilsummen betraegt %lf.\n", n, ergebnis);
+     printf("Der natuerliche Logarithmus von 2 mit %d Teilsummen betraegt %lf.\n", n, ergebnis);
 
      return 0;
 }
