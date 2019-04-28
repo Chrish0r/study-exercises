@@ -1,18 +1,12 @@
 #include <stdio.h>
 
 int cube(int *n) {
-  return *n * *n * *n;
+    return *n * *n * *n;
 }
 
-int main() {
+int main(void) {
     int number;
-
-  int *pnumber;
-  pnumber = &number;
-
-  scanf("%d", &number);
-
-  printf("%d^3 = %d\n", number, cube(pnumber));
-
-  return 0;
+    scanf("%d", &number);
+    printf("%d^3 = %d\n", number, cube(&number));
+	return 0;
 }
