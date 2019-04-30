@@ -6,7 +6,11 @@ int main() {
     printf("Please enter the number of rows: ");
     scanf("%d", &n);
 
-    if (n % 2 != 0) {
+    if (n <= 2) {
+        printf("Die Anzahl der eingegebenen Zeilen ist zu niedrig, um ein X auszugeben.\n");
+    }
+
+    else if (n % 2 != 0) {
             for (z = 1; z <= n/2; z++) {
                 printf("%*s", z - 1, "");
                 printf("*");
@@ -41,10 +45,7 @@ int main() {
                     printf("*");
                     printf("%*s", (n - 2) - 2 * leer_li, "");
                     printf("*\n");
-
-
-                }
-
+               }
             }
 
    return 0;
