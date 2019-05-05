@@ -5,17 +5,16 @@ int main() {
     int i, n, fak;
     scanf("%d", &n);
 
-    fak = n;
+    fak = 1;
 
-    if ( n == 1 | n == 0) {
-        printf("%d", 1);
+    if ( n <= 1) {
+        printf("%d", fak);
     } else {
-        for (i = (n-1); i >= 1; i--) {
+        for (i = 1; i <= n; i++) {
             fak *= i;
         }
-        printf("%d", fak);
+        printf("%d\n", fak);
     }
-
 
      return 0;
 }
