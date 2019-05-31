@@ -13,6 +13,7 @@ void  strcpy(char* t1, char* t2) {
     for(pos = 0; t2[pos] != '\0'; pos++) {
         t1 [pos] = t2[pos];
     }
+    t1[pos] = '\0';
 }
 
 void strcat(char* text1, char* text2) {
