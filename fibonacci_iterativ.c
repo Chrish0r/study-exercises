@@ -4,7 +4,7 @@
 unsigned int fibonacci(int x) {
     int i, erster_Summand = 0, zweiter_Summand = 1, summe;
     if(x == 0) { // statt mit else if, auch einfach zwei separate if und dann for-loop moeglich
-        return 1;
+        return 0;
     }
     else if(x == 1) {
         return 1;
