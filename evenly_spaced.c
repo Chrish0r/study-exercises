@@ -1,30 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int is_evenly_spaced(z1, z2, z3) {
-    int min = z1, middle = z2, max = z3;
+void sort(int* x, int* y) {
+    int temp;
 
-    if (z1 > max)
-        max = z1;
-    if (z2 > max)
-        max = z2;
-
-
-    if (z2 < min)
-        min = z2;
-    if (z3 < min)
-        min = z3;
-
-
-    if (z1 > min && z1 < max) {
-        middle = z1;
+    if(*x > *y) {
+    temp = *x;
+    *x = *y;
+    *y = temp;
     }
-    else if (z3 < max && z3 > min) {
-        middle = z3;
+}
+
+int is_evenly_spaced(int* a, int* b, int* c) {
+    while(*a > *b || *b > *c) {
+        sort(a, b);
+        sort(b, c);
     }
 
-
-    if((middle - min) == (max - middle)){
+    if((*b - *a) == (*c - *b)) {
         return 1;
     } else {
         return 0;
@@ -32,17 +25,15 @@ int is_evenly_spaced(z1, z2, z3) {
 }
 
 int main() {
-    int a, b, c, erg;
+    int z1, z2, z3;
+    printf("Bitte geben Sie drei ganze Zahlen ein: \n");
+    scanf("%d %d %d", &z1, &z2, &z3);
 
-    scanf("%d %d %d", &a, &b, &c);
-
-    erg = is_evenly_spaced(a, b, c);
-
-    if ( erg == 1) {
-         printf("%d, %d und %d sind gleich verteilt.\n", a, b, c);
+    if(is_evenly_spaced(&z1, &z2, &z3)) {
+        printf("wahr\n");
     } else {
-            printf("%d, %d und %d sind nicht gleich verteilt.\n", a, b, c);
-            }
-			
+        printf("falsch\n");
+    }
+
     return 0;
 }
