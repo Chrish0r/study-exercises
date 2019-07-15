@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int fak(int n) {
+
+    if(n == 1 || n == 0) {
+        return 1;
+    } else {
+        return n * fak(n - 1);
+    }
+}
+
+int main () {
+
+    int a = 5;
+
+    printf("Die fakultaet von %d ist %d\n", a, fak(a));
+
+    return 0;
+}
