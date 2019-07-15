@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int ggT(int a, int b) {
+    int i, ggT = 1;
+
+    for(i = 1; i < a/2 || i < b/2; i++) {
+        if((a % i == 0) && ( b % i == 0)) {
+            ggT = i;
+        }
+    }
+    return ggT;
+}
+
+int main() {
+   int a = 1071;
+   int b = 1021;
+
+   printf("ggT ist %d \n", ggT(a, b));
+
+}
+
